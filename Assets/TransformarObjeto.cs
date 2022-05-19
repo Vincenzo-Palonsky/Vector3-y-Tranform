@@ -14,7 +14,6 @@ public class TransformarObjeto : MonoBehaviour
     bool isRotated;
     bool isScaled;
 
-    // Start is called before the first frame update
     void Start()
     {
         isRotated = false;
@@ -22,8 +21,8 @@ public class TransformarObjeto : MonoBehaviour
         originalRotation = myCube.transform.eulerAngles;
         originalScale = myCube.transform.localScale;
     }
+    
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
@@ -58,7 +57,7 @@ public class TransformarObjeto : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (isRotated || isScaled)
+            if (isRotated && isScaled)
             {
                 myCube.transform.eulerAngles = originalRotation;
                 myCube.transform.localScale = originalScale;
